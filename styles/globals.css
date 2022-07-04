@@ -1,16 +1,199 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.file_picker {
+  border: 3px dashed #666;
+  cursor: pointer;
+  display: block;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  height: 100%;
+  padding: 12rem 0;
+}
+#file_picker_small {
+  padding: 3rem 2rem;
+}
+
+.range_pack {
+  position: relative;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.image_box > input {
+  pointer-events: none;
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  background-color: transparent;
+}
+
+.image_box {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  border: 2px solid red;
+  position: relative;
+  height: 6rem;
+  /* overflow: hidden; */
+  border-radius: 10px;
+}
+.image_box > img {
+  height: 100%;
+  width: 100px;
+  object-fit: cover;
+}
+
+.clip_box {
+  border: 10px solid red;
+  position: absolute;
+  height: 110%;
+  box-shadow: 2000 0 5px 10px red, -400px 0 5px -10px red;
+  transform: translateY(-5%);
+  border-radius: 10px;
+}
+.clip_box::before,
+.clip_box::after {
+  position: absolute;
+  top: 90%;
+  transform: translateY(104%);
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.7rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.clip_box::before {
+  content: attr(data-start);
+  left: 0;
+  transform: translateY(90%) translateX(-50%);
+}
+.clip_box::after {
+  content: attr(data-end);
+  right: 0;
+  transform: translateY(90%) translateX(50%);
+}
+
+.clip_box_des {
+  width: 1.3rem;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.clip_box_des:nth-child(1) {
+  left: 0;
+  transform: translateX(-70%);
+  border-radius: 10px 0 0 10px;
+}
+.clip_box_des:nth-child(2) {
+  right: 0;
+  transform: translateX(70%);
+  flex-flow: row-reverse;
+  border-radius: 0 10px 10px 0;
+}
+.clip_box_des::before,
+.clip_box_des::after {
+  content: "";
+  width: 3px;
+  background-color: #f2f2f2;
+  border-radius: 100px;
+}
+.clip_box_des::before {
+  height: 60%;
+}
+.clip_box_des::after {
+  height: 40%;
+}
+
+.range::-webkit-slider-thumb {
+  appearance: none;
+  pointer-events: all;
+  width: 30px;
+  height: 200px;
+  /* border-radius: 50%; */
+  /* opacity: 1; */
+  background: pink;
+  cursor: ew-resize;
+  /* z-index: 2; */
+}
+
+.deck {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  align-items: start;
+  margin-top: 1.4rem;
+
+  gap: 4rem;
+}
+.deck > * {
+  border-radius: 5px;
+  align-items: start;
+}
+
+.deck > button {
+  align-self: center;
+}
+
+.grid_txt_2 {
+  display: grid;
+  gap: 1rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #f4f4f4;
+  color: rgb(155, 150, 150);
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  font-size: 1.2rem;
+}
+
+.btn_g {
+  background-color: #24d34e;
+  color: #f2f2f2;
+}
+.btn_b {
+  background-color: #0a57fe;
+  color: #f3f3f3;
+}
+.bord_g_2 {
+  border: 2px solid rgb(230, 220, 220);
+}
+.p_2 {
+  padding: 2rem;
+}
+.u-center {
+  text-align: center;
 }
