@@ -9,16 +9,8 @@ function VideoFilePicker({ showVideo, handleChange, children }) {
       <input onChange={handleChange} type="file" id="x" accept="video/mp4" />
     </label>
   );
-  if (showVideo) {
-    return (
-      <>
-        {children}
-        <FileInput />
-      </>
-    );
-  }
-
-  return <FileInput />;
+ 
+  return(showVideo ? (<> {children} <FileInput /></>)  : <FileInput />)
 }
 
 export default VideoFilePicker;
