@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
+import { createFFmpeg, fetchFile } from "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js";
 import * as helpers from "../utils/helpers";
 import VideoFilePicker from "../components/VideoFilePicker";
 import OutputVideo from "../components/OutputVideo";
